@@ -1,0 +1,27 @@
+<!-- Angular Expressions // Interpolation -->
+<h2>{{ title | uppercase }}</h2>
+<p>{{ (title.length > 2) ? 'Longueur OK' : 'Longueur KO' }}</p>
+
+<p>Input value: {{inputValue?.length}}</p>
+
+<!-- event binding -->
+<button (click)="buttonClick()">My Button</button>
+
+<!-- property binding -->
+<button [disabled]="inputValue && inputValue.length < 10">Disabled Button</button>
+
+<!-- directives d'attribut -->
+<p [ngClass]="" [ngStyle]="" #myParagraph>p</p>
+{{ myParagraph.innerText }}
+
+<!-- directives d'attribut -->
+<p [hidden]="inputValueLengthMoreThan(10)">Input value lenght > 10 with hidden</p>
+
+<!-- directive de structure -->
+<p *ngIf="inputValueLengthMoreThan(10)">Input value lenght > 10</p>
+
+<ul>
+    <li *ngFor="let product of products">
+        {{ product.id }} - {{ product.name }}
+    </li>
+</ul>
