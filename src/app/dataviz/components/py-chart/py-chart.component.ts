@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-
 interface Options {
   text: string;
-  value: number;
+  ext: string;
+  x: number;
+  y: number;
 }
 
 @Component({
@@ -21,11 +22,11 @@ export class PyChartComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.loadChart(this.options.text);
+    this.loadChart(this.options);
   }
 
-  loadChart(text: string) {
-    this.chartUrl = 'https://via.placeholder.com/728x120.png?text=' + text;
+  loadChart(options: Options) {
+    this.chartUrl = `https://via.placeholder.com/${options.x}x${options.y}.${options.ext}?text=${options.text}`;
   }
 
 }
