@@ -9,7 +9,10 @@ import { HeaderComponent } from './components/header/header.component';
 import { OtherPageComponent } from './components/other-page/other-page.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatToolbarModule } from '@angular/material/toolbar';
+import { MaterialModule } from './material.module';
+import { HttpClientModule } from '@angular/common/http';
+import { ProductService } from './product/services/product.service';
+import { DatavizModule } from './dataviz/dataviz.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,9 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatToolbarModule
+    MaterialModule,
+    HttpClientModule,
+    DatavizModule
   ],
   exports: [
 
